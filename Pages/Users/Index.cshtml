@@ -1,0 +1,216 @@
+﻿@page 
+@model WebApplication5.Pages.Users.IndexModel
+@{
+}
+<style>
+    /* Tablo stilini düzenle */
+    table {
+        border-collapse: collapse;
+        margin: 0 auto; /* Sayfanın ortasına hizalama */
+    }
+
+    th, td {
+        border: 3px solid navy;
+        color:black;
+    }
+
+
+    /* Tablo başlığını stilini düzenle */
+    th {
+        color: white;
+        background-color: navy;
+        text-align:center;
+    }
+</style>
+<div class="row">
+<div class="col-md-4">
+   
+        <form method="post" style=" color:navy" asp-page-handler="UpdateUser">
+            <h2>Kullanıcı Güncelleme</h2>
+            <div style="margin-bottom: 10px;">
+            <label>ID:</label>
+            <input type="text" name="UserIdToUpdate" required>
+        </div>
+
+            <div style="margin-bottom: 10px;">
+            <label>Şifre:</label>
+            <input type="password" name="UserPasswordToUpdate" required>
+        </div>
+            <div style="margin-bottom: 10px;">
+                <label>Yeni Ad:</label>
+                <input type="text" name="UpdatedUser.FirstName" required>
+            </div>
+
+            <div style="margin-bottom: 10px;">
+                <label>Yeni Soyad:</label>
+                <input type="text" name="UpdatedUser.LastName" required>
+            </div>
+
+            <div style="margin-bottom: 10px;">
+                <label>Yeni Adres:</label>
+                <input type="text" name="UpdatedUser.UserAddress" required>
+            </div>
+
+            <div style="margin-bottom: 10px;">
+                <label>Yeni Şehir:</label>
+                <input type="text" name="UpdatedUser.City" required>
+            </div>
+
+            <div style="margin-bottom: 10px;">
+                <label>Yeni Ülke:</label>
+                <input type="text" name="UpdatedUser.Country" required>
+            </div>
+
+            <div style="margin-bottom: 10px;">
+                <label>Yeni Telefon:</label>
+                <input type="tel" name="UpdatedUser.PhoneNo" required>
+            </div>
+
+            <div style="margin-bottom: 30px;">
+                <label>Yeni Mail:</label>
+                <input type="email" name="UpdatedUser.Mail" required>
+            </div>
+        
+
+        <button type="submit" class="btn btn-warning">Kullanıcı Güncelle</button>
+    </form>
+</div>
+
+
+    <div class="col-md-4">
+
+
+    <form method="post" style=" color:navy">
+        <h2>Kullanıcı Ekleme</h2>
+        <div style="margin-bottom: 10px;">
+            <label>ID:</label>
+            <input  type="text" asp-for="@Model.NewUser.Id" required>
+        </div>
+
+        <div style="margin-bottom: 10px;">
+            <label>Şifre:</label>
+            <input type="password" asp-for="@Model.NewUser.Password" required>
+        </div>
+
+        <div style="margin-bottom: 10px;">
+            <label>Ad:</label>
+            <input type="text" asp-for="@Model.NewUser.FirstName" required>
+        </div>
+
+        <div style="margin-bottom: 10px;">
+            <label>Soyad:</label>
+            <input type="text" asp-for="@Model.NewUser.LastName" required>
+        </div>
+
+        <div style="margin-bottom: 10px;">
+            <label>Adres:</label>
+            <input type="text" asp-for="@Model.NewUser.UserAddress" required>
+        </div>
+
+        <div style="margin-bottom: 10px;">
+            <label>Şehir:</label>
+            <input type="text" asp-for="@Model.NewUser.City" required>
+        </div>
+
+        <div style="margin-bottom: 10px;">
+            <label>Ülke:</label>
+            <input type="text" asp-for="@Model.NewUser.Country" required>
+        </div>
+
+        <div style="margin-bottom: 10px;">
+            <label>Telefon:</label>
+            <input type="tel" asp-for="@Model.NewUser.PhoneNo" required>
+        </div>
+
+        <div style="margin-bottom: 30px;">
+            <label>Mail:</label>
+            <input type="email" asp-for="@Model.NewUser.Mail" required>
+        </div>
+
+        <div style="margin-bottom: 10px;">
+        <button type="submit" class="btn btn-primary">Kullanıcı Ekle</button>
+        </div>
+
+        <div style="margin-bottom: 60px;">
+           
+        </div>
+
+    </form>
+    </div>
+
+
+    <div class="col-md-4">
+        <form method="post" style=" color:navy" asp-page-handler="Delete">
+    <h2>Kullanıcı Silme</h2>
+    <div style ="margin-bottom: 10px;">
+        <label>ID:</label>
+        <input type="text" name="UserIdToDelete" required>
+    </div>
+
+    <div style ="margin-bottom: 30px;">
+        <label>Şifre:</label>
+        <input type="password" name="UserPassword" required>
+    </div>
+
+    <button type="submit" class="btn btn-danger">Kullanıcıyı Sil</button>
+         </form>
+
+    </div>
+    <style>
+    <div>
+            .divider {
+                width: 100%;
+                height: 1px;
+                background-color: #ccc;
+                margin: 20px 0;
+            }
+
+
+       </div >
+
+
+
+
+
+           
+
+
+    </style>
+    <div class="divider"></div>
+    <h1 style="text-align: center; color:navy;">Kullanıcılar Listesi</h1> 
+    <table border="1" cellspacing="5" cellpadding="5">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Şifre</th>
+                <th>Ad</th>
+                <th>Soyad</th>
+                <th>Adres</th>
+                <th>Şehir</th>
+                <th>Ülke</th>
+                <th>Telefon</th>
+                <th>Mail</th>
+                <th>İşlemler</th>
+            </tr>
+        </thead>
+        <tbody> 
+            @foreach (var user in Model.Users)
+            {
+                <tr>
+                    <td>@user.Id</td>
+                    <td>@user.Password</td>
+                    <td>@user.FirstName</td>
+                    <td>@user.LastName</td>
+                    <td>@user.UserAddress</td>
+                    <td>@user.City</td>
+                    <td>@user.Country</td>
+                    <td>@user.PhoneNo</td>
+                    <td>@user.Mail</td>
+                    <td><a href="EditUser.cshtml?id=@user.Id" style=" color:navy" class="btn btn-primary">Düzenle</a></td>
+                </tr>
+            }
+        </tbody>
+    </table>
+
+
+

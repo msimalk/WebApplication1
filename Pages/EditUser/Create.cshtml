@@ -1,0 +1,69 @@
+﻿@page
+@model WebApplication5.Pages.EditUser.CreateModel
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create</h1>
+
+<h4>Usermodel</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Usermodel.Password" class="control-label"></label>
+                <input asp-for="Usermodel.Password" class="form-control" />
+                <span asp-validation-for="Usermodel.Password" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Usermodel.FirstName" class="control-label"></label>
+                <input asp-for="Usermodel.FirstName" class="form-control" />
+                <span asp-validation-for="Usermodel.FirstName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Usermodel.LastName" class="control-label"></label>
+                <input asp-for="Usermodel.LastName" class="form-control" />
+                <span asp-validation-for="Usermodel.LastName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Usermodel.UserAddress" class="control-label"></label>
+                <input asp-for="Usermodel.UserAddress" class="form-control" />
+                <span asp-validation-for="Usermodel.UserAddress" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Usermodel.City" class="control-label"></label>
+                <input asp-for="Usermodel.City" class="form-control" />
+                <span asp-validation-for="Usermodel.City" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Usermodel.Country" class="control-label"></label>
+                <input asp-for="Usermodel.Country" class="form-control" />
+                <span asp-validation-for="Usermodel.Country" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Usermodel.PhoneNo" class="control-label"></label>
+                <input asp-for="Usermodel.PhoneNo" class="form-control" />
+                <span asp-validation-for="Usermodel.PhoneNo" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Usermodel.Mail" class="control-label"></label>
+                <input asp-for="Usermodel.Mail" class="form-control" />
+                <span asp-validation-for="Usermodel.Mail" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
