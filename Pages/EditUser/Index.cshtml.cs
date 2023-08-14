@@ -25,6 +25,7 @@ namespace WebApplication5.Pages.EditUser
             if (_context.UserTables != null)
             {
                 UserTable = await _context.UserTables.ToListAsync();
+
             }
         }
     }
