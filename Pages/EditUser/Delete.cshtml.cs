@@ -5,55 +5,54 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.EntityFrameworkCore;
-using WebApplication5.Data;
-using WebApplication5.models;
+using Services.Models;
 
 namespace WebApplication5.Pages.EditUser
 {
     public class DeleteModel : PageModel
     {
-        private readonly WebApplication5.Data.WebApplication5Context _context;
+        private readonly Services.Models.simalContext _context;
 
-        public DeleteModel(WebApplication5.Data.WebApplication5Context context)
+        public DeleteModel(Services.Models.simalContext context)
         {
             _context = context;
         }
 
         [BindProperty]
-      public Usermodel Usermodel { get; set; } = default!;
+      public UserTable UserTable { get; set; } = default!;
 
         public async Task<IActionResult> OnGetAsync(int? id)
         {
-            if (id == null || _context.Usermodel == null)
+            if (id == null || _context.UserTables == null)
             {
                 return NotFound();
             }
 
-            var usermodel = await _context.Usermodel.FirstOrDefaultAsync(m => m.Id == id);
+            var usertable = await _context.UserTables.FirstOrDefaultAsync(m => m.Ussn == id);
 
-            if (usermodel == null)
+            if (usertable == null)
             {
                 return NotFound();
             }
             else 
             {
-                Usermodel = usermodel;
+                UserTable = usertable;
             }
             return Page();
         }
 
         public async Task<IActionResult> OnPostAsync(int? id)
         {
-            if (id == null || _context.Usermodel == null)
+            if (id == null || _context.UserTables == null)
             {
                 return NotFound();
             }
-            var usermodel = await _context.Usermodel.FindAsync(id);
+            var usertable = await _context.UserTables.FindAsync(id);
 
-            if (usermodel != null)
+            if (usertable != null)
             {
-                Usermodel = usermodel;
-                _context.Usermodel.Remove(Usermodel);
+                UserTable = usertable;
+                _context.UserTables.Remove(UserTable);
                 await _context.SaveChangesAsync();
             }
 

@@ -1,12 +1,15 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
-using WebApplication5.Data;
+using Services.Models;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
+
+builder.Services.AddDbContext<simalContext>(options =>
+    options.UseSqlServer(builder.Configuration.GetConnectionString("WebApplication5Context")));
+
 builder.Services.AddRazorPages();
-builder.Services.AddDbContext<WebApplication5Context>(options =>
-    options.UseSqlServer(builder.Configuration.GetConnectionString("WebApplication5Context") ?? throw new InvalidOperationException("Connection string 'WebApplication5Context' not found.")));
 
 var app = builder.Build();
 

@@ -7,51 +7,56 @@
 
 <h1>Create</h1>
 
-<h4>Usermodel</h4>
+<h4>UserTable</h4>
 <hr />
 <div class="row">
     <div class="col-md-4">
         <form method="post">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <div class="form-group">
-                <label asp-for="Usermodel.Password" class="control-label"></label>
-                <input asp-for="Usermodel.Password" class="form-control" />
-                <span asp-validation-for="Usermodel.Password" class="text-danger"></span>
+                <label asp-for="UserTable.Ussn" class="control-label"></label>
+                <input asp-for="UserTable.Ussn" class="form-control" />
+                <span asp-validation-for="UserTable.Ussn" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="Usermodel.FirstName" class="control-label"></label>
-                <input asp-for="Usermodel.FirstName" class="form-control" />
-                <span asp-validation-for="Usermodel.FirstName" class="text-danger"></span>
+                <label asp-for="UserTable.Password" class="control-label"></label>
+                <input asp-for="UserTable.Password" class="form-control" />
+                <span asp-validation-for="UserTable.Password" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="Usermodel.LastName" class="control-label"></label>
-                <input asp-for="Usermodel.LastName" class="form-control" />
-                <span asp-validation-for="Usermodel.LastName" class="text-danger"></span>
+                <label asp-for="UserTable.FirstName" class="control-label"></label>
+                <input asp-for="UserTable.FirstName" class="form-control" />
+                <span asp-validation-for="UserTable.FirstName" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="Usermodel.UserAddress" class="control-label"></label>
-                <input asp-for="Usermodel.UserAddress" class="form-control" />
-                <span asp-validation-for="Usermodel.UserAddress" class="text-danger"></span>
+                <label asp-for="UserTable.LastName" class="control-label"></label>
+                <input asp-for="UserTable.LastName" class="form-control" />
+                <span asp-validation-for="UserTable.LastName" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="Usermodel.City" class="control-label"></label>
-                <input asp-for="Usermodel.City" class="form-control" />
-                <span asp-validation-for="Usermodel.City" class="text-danger"></span>
+                <label asp-for="UserTable.UserAddress" class="control-label"></label>
+                <input asp-for="UserTable.UserAddress" class="form-control" />
+                <span asp-validation-for="UserTable.UserAddress" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="Usermodel.Country" class="control-label"></label>
-                <input asp-for="Usermodel.Country" class="form-control" />
-                <span asp-validation-for="Usermodel.Country" class="text-danger"></span>
+                <label asp-for="UserTable.City" class="control-label"></label>
+                <input asp-for="UserTable.City" class="form-control" />
+                <span asp-validation-for="UserTable.City" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="Usermodel.PhoneNo" class="control-label"></label>
-                <input asp-for="Usermodel.PhoneNo" class="form-control" />
-                <span asp-validation-for="Usermodel.PhoneNo" class="text-danger"></span>
+                <label asp-for="UserTable.Country" class="control-label"></label>
+                <input asp-for="UserTable.Country" class="form-control" />
+                <span asp-validation-for="UserTable.Country" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="Usermodel.Mail" class="control-label"></label>
-                <input asp-for="Usermodel.Mail" class="form-control" />
-                <span asp-validation-for="Usermodel.Mail" class="text-danger"></span>
+                <label asp-for="UserTable.PhoneNo" class="control-label"></label>
+                <input asp-for="UserTable.PhoneNo" class="form-control" />
+                <span asp-validation-for="UserTable.PhoneNo" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="UserTable.Mail" class="control-label"></label>
+                <input asp-for="UserTable.Mail" class="form-control" />
+                <span asp-validation-for="UserTable.Mail" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <input type="submit" value="Create" class="btn btn-primary" />

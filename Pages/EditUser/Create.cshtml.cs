@@ -5,16 +5,15 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.AspNetCore.Mvc.Rendering;
-using WebApplication5.Data;
-using WebApplication5.models;
+using Services.Models;
 
 namespace WebApplication5.Pages.EditUser
 {
     public class CreateModel : PageModel
     {
-        private readonly WebApplication5.Data.WebApplication5Context _context;
+        private readonly Services.Models.simalContext _context;
 
-        public CreateModel(WebApplication5.Data.WebApplication5Context context)
+        public CreateModel(Services.Models.simalContext context)
         {
             _context = context;
         }
@@ -25,18 +24,18 @@ namespace WebApplication5.Pages.EditUser
         }
 
         [BindProperty]
-        public Usermodel Usermodel { get; set; } = default!;
+        public UserTable UserTable { get; set; } = default!;
         
 
         // To protect from overposting attacks, see https://aka.ms/RazorPagesCRUD
         public async Task<IActionResult> OnPostAsync()
         {
-          if (!ModelState.IsValid || _context.Usermodel == null || Usermodel == null)
+          if (!ModelState.IsValid || _context.UserTables == null || UserTable == null)
             {
                 return Page();
             }
 
-            _context.Usermodel.Add(Usermodel);
+            _context.UserTables.Add(UserTable);
             await _context.SaveChangesAsync();
 
             return RedirectToPage("./Index");

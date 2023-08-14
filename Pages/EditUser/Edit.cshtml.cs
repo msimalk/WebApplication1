@@ -6,36 +6,35 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
-using WebApplication5.Data;
-using WebApplication5.models;
+using Services.Models;
 
 namespace WebApplication5.Pages.EditUser
 {
     public class EditModel : PageModel
     {
-        private readonly WebApplication5.Data.WebApplication5Context _context;
+        private readonly Services.Models.simalContext _context;
 
-        public EditModel(WebApplication5.Data.WebApplication5Context context)
+        public EditModel(Services.Models.simalContext context)
         {
             _context = context;
         }
 
         [BindProperty]
-        public Usermodel Usermodel { get; set; } = default!;
+        public UserTable UserTable { get; set; } = default!;
 
         public async Task<IActionResult> OnGetAsync(int? id)
         {
-            if (id == null || _context.Usermodel == null)
+            if (id == null || _context.UserTables == null)
             {
                 return NotFound();
             }
 
-            var usermodel =  await _context.Usermodel.FirstOrDefaultAsync(m => m.Id == id);
-            if (usermodel == null)
+            var usertable =  await _context.UserTables.FirstOrDefaultAsync(m => m.Ussn == id);
+            if (usertable == null)
             {
                 return NotFound();
             }
-            Usermodel = usermodel;
+            UserTable = usertable;
             return Page();
         }
 
@@ -48,7 +47,7 @@ namespace WebApplication5.Pages.EditUser
                 return Page();
             }
 
-            _context.Attach(Usermodel).State = EntityState.Modified;
+            _context.Attach(UserTable).State = EntityState.Modified;
 
             try
             {
@@ -56,7 +55,7 @@ namespace WebApplication5.Pages.EditUser
             }
             catch (DbUpdateConcurrencyException)
             {
-                if (!UsermodelExists(Usermodel.Id))
+                if (!UserTableExists(UserTable.Ussn))
                 {
                     return NotFound();
                 }
@@ -69,9 +68,9 @@ namespace WebApplication5.Pages.EditUser
             return RedirectToPage("./Index");
         }
 
-        private bool UsermodelExists(int id)
+        private bool UserTableExists(int id)
         {
-          return (_context.Usermodel?.Any(e => e.Id == id)).GetValueOrDefault();
+          return (_context.UserTables?.Any(e => e.Ussn == id)).GetValueOrDefault();
         }
     }
 }

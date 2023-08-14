@@ -8,60 +8,66 @@
 <h1>Details</h1>
 
 <div>
-    <h4>Usermodel</h4>
+    <h4>UserTable</h4>
     <hr />
     <dl class="row">
         <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.Usermodel.Password)
+            @Html.DisplayNameFor(model => model.UserTable.Password)
         </dt>
         <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.Usermodel.Password)
+            @Html.DisplayFor(model => model.UserTable.Password)
         </dd>
         <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.Usermodel.FirstName)
+            @Html.DisplayNameFor(model => model.UserTable.FirstName)
         </dt>
         <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.Usermodel.FirstName)
+            @Html.DisplayFor(model => model.UserTable.FirstName)
         </dd>
         <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.Usermodel.LastName)
+            @Html.DisplayNameFor(model => model.UserTable.LastName)
         </dt>
         <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.Usermodel.LastName)
+            @Html.DisplayFor(model => model.UserTable.LastName)
         </dd>
         <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.Usermodel.UserAddress)
+            @Html.DisplayNameFor(model => model.UserTable.UserAddress)
         </dt>
         <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.Usermodel.UserAddress)
+            @Html.DisplayFor(model => model.UserTable.UserAddress)
         </dd>
         <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.Usermodel.City)
+            @Html.DisplayNameFor(model => model.UserTable.City)
         </dt>
         <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.Usermodel.City)
+            @Html.DisplayFor(model => model.UserTable.City)
         </dd>
         <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.Usermodel.Country)
+            @Html.DisplayNameFor(model => model.UserTable.Country)
         </dt>
         <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.Usermodel.Country)
+            @Html.DisplayFor(model => model.UserTable.Country)
         </dd>
         <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.Usermodel.PhoneNo)
+            @Html.DisplayNameFor(model => model.UserTable.PhoneNo)
         </dt>
         <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.Usermodel.PhoneNo)
+            @Html.DisplayFor(model => model.UserTable.PhoneNo)
         </dd>
         <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.Usermodel.Mail)
+            @Html.DisplayNameFor(model => model.UserTable.Mail)
         </dt>
         <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.Usermodel.Mail)
+            @Html.DisplayFor(model => model.UserTable.Mail)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.UserTable.IdNum)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.UserTable.IdNum)
         </dd>
     </dl>
 </div>
 <div>
-    <a asp-page="./Edit" asp-route-id="@Model.Usermodel?.Id">Edit</a> |
+    <a asp-page="./Edit" asp-route-id="@Model.UserTable?.Ussn">Edit</a> |
     <a asp-page="./Index">Back to List</a>
 </div>

@@ -14,34 +14,37 @@
     <thead>
         <tr>
             <th>
-                @Html.DisplayNameFor(model => model.Usermodel[0].Password)
+                @Html.DisplayNameFor(model => model.UserTable[0].Password)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Usermodel[0].FirstName)
+                @Html.DisplayNameFor(model => model.UserTable[0].FirstName)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Usermodel[0].LastName)
+                @Html.DisplayNameFor(model => model.UserTable[0].LastName)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Usermodel[0].UserAddress)
+                @Html.DisplayNameFor(model => model.UserTable[0].UserAddress)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Usermodel[0].City)
+                @Html.DisplayNameFor(model => model.UserTable[0].City)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Usermodel[0].Country)
+                @Html.DisplayNameFor(model => model.UserTable[0].Country)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Usermodel[0].PhoneNo)
+                @Html.DisplayNameFor(model => model.UserTable[0].PhoneNo)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Usermodel[0].Mail)
+                @Html.DisplayNameFor(model => model.UserTable[0].Mail)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.UserTable[0].IdNum)
             </th>
             <th></th>
         </tr>
     </thead>
     <tbody>
-@foreach (var item in Model.Usermodel) {
+@foreach (var item in Model.UserTable) {
         <tr>
             <td>
                 @Html.DisplayFor(modelItem => item.Password)
@@ -68,9 +71,12 @@
                 @Html.DisplayFor(modelItem => item.Mail)
             </td>
             <td>
-                <a asp-page="./Edit" asp-route-id="@item.Id">Edit</a> |
-                <a asp-page="./Details" asp-route-id="@item.Id">Details</a> |
-                <a asp-page="./Delete" asp-route-id="@item.Id">Delete</a>
+                @Html.DisplayFor(modelItem => item.IdNum)
+            </td>
+            <td>
+                <a asp-page="./Edit" asp-route-id="@item.Ussn">Edit</a> |
+                <a asp-page="./Details" asp-route-id="@item.Ussn">Details</a> |
+                <a asp-page="./Delete" asp-route-id="@item.Ussn">Delete</a>
             </td>
         </tr>
 }
